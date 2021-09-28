@@ -11,25 +11,22 @@ function readFile(callback) {
 function parseIni(fileContents) {
     // console.log("ini file:", fileContents);
     // console.log("lines:", lines);
-    const settings = {};
-    let subObject;
+    let settings = {};
+    const results = settings;
     // console.log("ini file:", lines);
     fileContents.split(/\r?\n/).map(l => {
-        if(l.startsWith(";")) return;
-        if(l.startsWith("[")) {
-            subObject = l.replace(/\[(.*)\]/, "$1");
-            settings[subObject] = {}
-            return;
-        };
-        const [prop, val] = l.split("=")
-        if(subObject) {
-            settings[subObject][prop] = val;
-        } else {
-            settings[prop] = val;
+        let found;
+        // if(l.startsWith(";")) return;
+        if(found = l.match(/\[(.*)\]/)) {
+            settings = results[found[1]] = {} ;
+        } else if(found = l.match(/(\w+)=(.*)/)) {
+            settings[found[1]] = found[2]
+        } else if(!/ /.test(l)) {
+            throw new Error("Invalid format!")
         }
         // console.log(l);
     });
-    console.log(settings);
+    console.log(results);
 }
 
 readFile(parseIni);
