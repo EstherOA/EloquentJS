@@ -1,0 +1,19 @@
+{
+  "name": "js-study",
+  "version": "1.0.0",
+  "description": "EloquentJS book labs ",
+  "main": "eloquent_labs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EstherOA/EloquentJS.git"
+  },
+  "author": "seren.dipite",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EstherOA/EloquentJS/issues"
+  },
+  "homepage": "https://github.com/EstherOA/EloquentJS#readme"
+}
