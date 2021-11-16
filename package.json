@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/EstherOA/EloquentJS/issues"
   },
-  "homepage": "https://github.com/EstherOA/EloquentJS#readme"
+  "homepage": "https://github.com/EstherOA/EloquentJS#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0"
+  }
 }

@@ -1,38 +1,3 @@
- //exercise one: LOOPING A TRIANGLE
-// for (let i = 1; i <= 7; i++) {
-//   console.log("#".repeat(i))
-// }
-
-// exercise two: FIZZBUZZ
-// for (let j = 1; j <= 100; j++) {
-//   if(j % 3 == 0) {console.log("Fizz");}
-//   else if(j % 5 == 0) {console.log("Buzz");}
-//   else {console.log(j);}
-// }
-
-// exercise three: CHESSBOARD
-// let string = "\n"
-// let isSpace = true;
-// let isSpaceStart = true;
-// let size = 6
-// let numArray = [...Array(size + 1).keys()].splice(1);
-
-// numArray.map(a => {
-//   numArray.map(n => {
-//   if(isSpace) {
-//     string += "  "
-//   } else {
-//     string += "#" 
-//   }
-//     isSpace = !isSpace;    
-//   });
-//   string += "\n";
-//   isSpaceStart = !isSpaceStart;
-//   isSpace = isSpaceStart;
-// });
-// console.log(string)
-
-
 //exercise four: MINIMUM
 // function min(a, b) {
 //   return a < b ? a : b

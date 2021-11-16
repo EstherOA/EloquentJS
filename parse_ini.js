@@ -30,3 +30,7 @@ function parseIni(fileContents) {
 }
 
 readFile(parseIni);
+
+function regexGolf() {
+    
+}

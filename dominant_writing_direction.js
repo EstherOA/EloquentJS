@@ -1,4 +1,4 @@
-const SCRIPTS = require('./scripts');
+import SCRIPTS from './scripts';
 
 let testString = "Helloaksdfjakajفي الكرامة والحقوق. وقد وهبوا عقلا";
 let charDirections = [];
