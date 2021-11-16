@@ -62,12 +62,12 @@ function randomDestination(arr) {
 let village = VillageState.intialize();
 // console.log("Parcels:", village.parcels);
 
-function robot(memory) {
+function fixedRouteRobot(memory) {
     if(memory.length == 0) memory = mailRoute;
     return {destination: memory[0], memory: memory.slice(1)};
 }
 
-function makeDeliveries(village) {
+function shortestRouteRobot(village) {
     let turns = 0;
     console.log("Parcels:", village.parcels)
     while(village.parcels.length > 0) {
@@ -79,10 +79,11 @@ function makeDeliveries(village) {
             bestRoute = bestRoute.slice(1)
             turns++;
         }
-        console.log("Parcels left:", village.parcels)
+        // console.log("Parcels left:", village.parcels)
     }
     console.log("Done in", turns, "turns");
     console.log("All delivered:", village.parcels)
+    return turns;
 }
 
 function findShortestRoute (currentLoc, destination) {
@@ -93,7 +94,17 @@ function findShortestRoute (currentLoc, destination) {
         if(nextLocs.includes(destination)) return [...route, destination]
         route.push(nextLocs.filter(e => !route.includes(e))[0])
     }
- }
+}
 
-makeDeliveries(village);
+function compareRobots(robotOne, robotTwo) {
+
+    const testVillage = VillageState.intialize(100);
+    const robotOneNumberOfTurns = robotOne(testVillage);
+    const robotTwoNumberOfTurns = robotTwo(testVillage);
+    console.log("It took robot one", robotOneNumberOfTurns, "turns to complete the given tasks");
+    console.log("It took robot two", robotTwoNumberOfTurns, "turns to complete the given tasks");
+}
+
+shortestRouteRobot(village);
+compareRobots(shortestRouteRobot, shortestRouteRobot);
 
