@@ -1,8 +1,34 @@
 import SCRIPTS from './scripts';
 
+// exercise eleven: FLATTENING
+const flatten = (arr) => arr.reduce((flatArr, currArr) => flatArr.concat(currArr), []);
+
+flatten([[1, 2], [3, 4], [5, 6], [2, 5, 6]])
+
+// exercise twelve: YOUR OWN LOOP
+const loop = (val, testFunc, updateFunc, bodyFunc) => {
+  let currVal = val;
+  while(testFunc(currVal)) {
+    bodyFunc(currVal);
+    currVal = updateFunc(currVal);
+  }
+}
+
+loop(0, a => a < 5, a => a += 1, a => console.log(a));
+
+// exercise thirteen: EVERYTHING
+const everyWithLoop = (arr, predicateFunc) => {
+  return !arr.map(a => predicateFunc(a)).includes(false)
+}
+
+const everyWithSome = (arr, predicateFunc) => arr.some(predicateFunc)
+
+console.log(everyWithSome([1, 2, 3, 4, 5], x => x > 2))
+console.log(everyWithLoop([1, 2, 3, 4, 5], x => x < 6))
+
+// exercise fourteen: Dominant Writing Direction
 let testString = "Helloaksdfjakajفي الكرامة والحقوق. وقد وهبوا عقلا";
 let charDirections = [];
-// console.log(SCRIPTS);
 
 const getCharScript = (string, pos) => {
     for(s of SCRIPTS) {

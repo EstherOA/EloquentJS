@@ -3,7 +3,7 @@ const codeGolf = (text, regexNum) => {
 
     //string one - cat, car
     const carRegex = /ca(r|t)/;
-
+ 
     //string two - pop, prop
     const popRegex = /p(r)?op/;
 
